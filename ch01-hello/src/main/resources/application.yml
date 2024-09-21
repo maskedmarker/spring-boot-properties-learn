@@ -1,0 +1,17 @@
+# spring
+spring:
+  application:
+    name: hello-prop
+
+
+password:
+  enable:
+    encrypt: true
+
+# biz
+biz:
+  config:
+    pwd: cI/D9qVuQqrwiEeLFYJXGhXtuRLoVSLZn8u5idG/X9cOkToFTGCuZscJefYkPuz0AuwAgrd/3Vq1+erHk2ExUW8euPjwwkv9k9/5cKZsrgKpn01yAfFgaa+WD8kTT7ZhFEL+/vxl4JIH7qEFXi9gQidtXjkFmOCm/BrGIRXQEUfscIPMFTIQuw36YJiXJAwhmeWR523suQNn2nLd7OHrMoRi7ncc0dL8qRCbMx7iDncCd8Nxk2PTxucrOS2d0o74WqX9M/LBlndYQELgFBA2GUC5XO7zPB6tAbeP63D36xmx6ysn3rFTXNoLw/6P9IHiQaGX4hmEz5OWq0ZH0nC/bA==
+
+
+
