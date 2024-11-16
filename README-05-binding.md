@@ -1,0 +1,32 @@
+# spring-binding
+
+
+
+## ConfigurationPropertiesBindingPostProcessor
+被添加了@ConfigurationProperties注解的bean,会在该bean被实例化(即new)之后,初始化阶段被ConfigurationPropertiesBindingPostProcessor绑定(bind)合适的属性值.
+ConfigurationPropertiesBinder的Binder负责完成beanDefinition中占位符对应的bean实例属性值的绑定过程.
+Binder的PropertySources来自于ConfigurationPropertiesBinder;ConfigurationPropertiesBinder的PropertySources来自于applicationContext
+
+## Binder
+A container object which Binds objects from one or more ConfigurationPropertySources.
+
+Binder主要的构造函数:
+Binder(Iterable<ConfigurationPropertySource> sources, PlaceholdersResolver placeholdersResolver,
+        ConversionService conversionService, Consumer<PropertyEditorRegistry> propertyEditorInitializer,
+        BindHandler defaultBindHandler, BindConstructorProvider constructorProvider)
+
+从Binder的构造函数的入参可以看出Binder要完成工作需要如下信息:
+ConfigurationPropertySource: 占位符的实际数值的来源(ConfigurationPropertySources)
+PlaceholdersResolver: 从数据源提取对应的配置项值
+ConversionService: 将配置项值转换为bean实例属性类型的有型配置项值
+PropertyEditorRegistry: PropertyEditor的注册中心,当为bean实例设置属性值时,需要bean实例属性类型从注册中心取出对应类型的PropertyEditor,通过PropertyEditor将有型配置项值赋值到bean属性中
+BindHandler: ???
+BindConstructorProvider: ???
+
+PropertySourcesPlaceholdersResolver
+
+DataObjectBinder
+JavaBeanBinder implements DataObjectBinder
+JavaBeanBinder基于setter来为bean设置属性值.
+
+
